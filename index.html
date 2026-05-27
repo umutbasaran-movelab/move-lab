@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@ body {
   color: #1f2a35;
 }
 
-/* HEADER (ENHANCED GRADIENT) */
+/* HEADER */
 header {
   background: linear-gradient(135deg, #2b8bd6 0%, var(--movelab-blue) 40%, #002f4f 100%);
   color: white;
@@ -24,6 +25,7 @@ header {
 
 header h1 {
   font-size: 42px;
+  font-weight: 600;
 }
 
 header p {
@@ -62,17 +64,24 @@ h3 {
   margin-top: 30px;
 }
 
-/* CARD SYSTEM */
+/* CARD */
 .card {
   background: white;
   padding: 28px;
   border-radius: 10px;
   margin-top: 20px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  line-height: 1.5;
 }
 
-/* LIST STYLE */
+/* ✅ SPACING FIX */
+p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
 ul {
+  margin-top: 8px;
   line-height: 1.7;
   padding-left: 18px;
 }
@@ -81,13 +90,12 @@ ul li {
   margin-bottom: 14px;
 }
 
-.student-list li {
-  margin-bottom: 20px;
+#publications li {
+  margin-bottom: 12px;
 }
 
-/* LONG TEXT FIX */
-li {
-  word-break: break-word;
+.student-list li {
+  margin-bottom: 20px;
 }
 
 /* FOOTER */
@@ -99,68 +107,24 @@ footer {
 }
 
 /* -------- RESPONSIVE -------- */
-
 @media (max-width: 768px) {
+  header { padding: 60px 20px 40px; }
+  header h1 { font-size: 26px; }
+  header p { font-size: 15px; }
 
-  header {
-    padding: 60px 20px 40px;
-  }
+  nav { padding: 10px 15px; overflow-x: auto; white-space: nowrap; }
 
-  header h1 {
-    font-size: 26px;
-    line-height: 1.3;
-  }
-
-  header p {
-    font-size: 15px;
-  }
-
-  nav {
-    padding: 10px 15px;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 5px 12px 5px 0;
-    font-size: 14px;
-  }
-
-  section {
-    padding: 40px 18px;
-  }
-
-  .card {
-    padding: 18px;
-  }
-
+  section { padding: 40px 18px; }
+  .card { padding: 18px; }
 }
 
 @media (max-width: 480px) {
-
-  header h1 {
-    font-size: 22px;
-  }
-
-  header p {
-    font-size: 14px;
-  }
-
-  nav a {
-    font-size: 13px;
-  }
-
-  section {
-    padding: 30px 14px;
-  }
-
-  .card {
-    padding: 16px;
-  }
-
+  header h1 { font-size: 22px; }
+  header p { font-size: 14px; }
+  nav a { font-size: 13px; }
+  section { padding: 30px 14px; }
+  .card { padding: 16px; }
 }
-
 </style>
 </head>
 
@@ -175,17 +139,24 @@ footer {
 </header>
 
 <nav>
-  #homeHome</a>
-  #researchResearch</a>
-  #peoplePeople</a>
-  #facilitiesFacilities</a>
-  #publicationsPublications & Patents</a>
-  #contactContact</a>
+  <a href="#home">Home</a>
+  <a href="#research">Research</a>
+  <a href="#people">People</a>
+  <a href="#facilities">Facilities</a>
+  <a href="#publications">Publications & Patents</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <section id="research">
 <h2>Research Areas</h2>
+
 <div class="card">
+<p>
+MOVE Lab is dedicated to pioneering research in mobility and vehicle electronics. 
+We bridge the gap between rigorous academic investigation and industry application, 
+focusing on power electronics, embedded systems, and intelligent mobility solutions for modern transportation.
+</p>
+
 <ul>
 <li>Power Electronics</li>
 <li>Vehicle Electronics</li>
@@ -193,6 +164,7 @@ footer {
 <li>Intelligent Mobility</li>
 </ul>
 </div>
+
 </section>
 
 <section id="people">
@@ -206,20 +178,31 @@ Principal Researcher
 <div class="card">
 <strong>Graduate Students (MSc)</strong>
 <ul class="student-list">
+
 <li>
-Emre İpek — BSc: Özyeğin University. Currently pursuing MSc.<br>
+Emre İpek<br>
+BSc: Özyeğin University<br>
 Research interests: Embedded systems and power electronics.
 </li>
 
 <li>
-Umut İlkbahar — BSc: Özyeğin University. Currently pursuing MSc.<br>
+Umut İlkbahar<br>
+BSc: Özyeğin University<br> 
 Research interests: Power electronics and hardware design.
 </li>
 
 <li>
-Efe Can Özhan — BSc: Özyeğin University. Currently pursuing MSc.<br>
+Efe Can Özhan<br>
+BSc: Özyeğin University<br>
 Research interests: Embedded systems and electronic hardware design.
 </li>
+
+<li>
+Deniz Kutay Kayan<br>
+BSc: Özyeğin University<br>
+Research interests: Embedded systems and electronic hardware design.
+</li>
+
 </ul>
 </div>
 
@@ -228,15 +211,21 @@ Research interests: Embedded systems and electronic hardware design.
 <ul class="student-list">
 
 <li>
-Yiğit Kartal — MSc Student.<br>
-Embedded Systems Engineer at AVL.<br>
-Research interests: Embedded systems.
+Yiğit Kartal<br>
+BSc: Özyeğin University<br>
+Embedded Systems Engineer at AVL.
 </li>
 
 <li>
-Buğra Aksu — MSc Student.<br>
-Electrical & Electronics Architecture Engineer at TOGG.<br>
-Research interests: Electrical and electronic architecture.
+Buğra Aksu<br>
+BSc: Özyeğin University<br>
+Electrical & Electronics Architecture Engineer at TOGG.
+</li>
+
+<li>
+İsra Görkem Bayrak<br>
+BSc: Ege University<br>
+Electrical & Electronics Engineer at Vestel.
 </li>
 
 </ul>
@@ -246,6 +235,7 @@ Research interests: Electrical and electronic architecture.
 
 <section id="facilities">
 <h2>Laboratory Facilities and Equipment</h2>
+
 <div class="card">
 <ul>
 <li>Power electronics prototyping benches</li>
@@ -254,6 +244,7 @@ Research interests: Electrical and electronic architecture.
 <li>Automotive Ethernet communication and testing equipment</li>
 </ul>
 </div>
+
 </section>
 
 <section id="publications">
@@ -295,8 +286,6 @@ Research interests: Electrical and electronic architecture.
 
 <li>Second-Order Filter with Notch for use in Receivers to effectively suppress the Transmitter Blockers (2013), DE102013203182B4; US9112476B2; US9413326B2</li>
 
-</ul>
-
 </div>
 </section>
 
@@ -306,8 +295,7 @@ Research interests: Electrical and electronic architecture.
 <div class="card">
 <p>
 Özyeğin Üniversitesi<br>
-Nişantepe Mahallesi, Orman Sokak No:13<br>
-Çekmeköy, İstanbul, Türkiye
+Çekmeköy, İstanbul
 </p>
 
 <p>Email: umut.basaran@ozyegin.edu.tr</p>
@@ -316,8 +304,9 @@ Nişantepe Mahallesi, Orman Sokak No:13<br>
 </section>
 
 <footer>
-© 2026 Mobility and Vehicle Electronics (MOVE) Lab – Özyeğin University
+© 2026 MOVE Lab – Özyeğin University
 </footer>
 
 </body>
 </html>
+``
