@@ -15,15 +15,23 @@ body {
   color: #1f2a35;
 }
 
+/* HEADER (ENHANCED GRADIENT) */
 header {
   background: linear-gradient(135deg, #2b8bd6 0%, var(--movelab-blue) 40%, #002f4f 100%);
   color: white;
   padding: 90px 40px 70px;
 }
 
-header h1 { font-size: 42px; }
-header p { font-size: 18px; max-width: 720px; }
+header h1 {
+  font-size: 42px;
+}
 
+header p {
+  font-size: 18px;
+  max-width: 720px;
+}
+
+/* NAV */
 nav {
   position: sticky;
   top: 0;
@@ -38,6 +46,7 @@ nav a {
   font-weight: 500;
 }
 
+/* SECTIONS */
 section {
   padding: 70px 40px;
   max-width: 1100px;
@@ -49,8 +58,11 @@ section h2 {
   margin-bottom: 20px;
 }
 
-h3 { margin-top: 30px; }
+h3 {
+  margin-top: 30px;
+}
 
+/* CARD SYSTEM */
 .card {
   background: white;
   padding: 28px;
@@ -59,6 +71,7 @@ h3 { margin-top: 30px; }
   box-shadow: 0 6px 18px rgba(0,0,0,0.05);
 }
 
+/* LIST STYLE */
 ul {
   line-height: 1.7;
   padding-left: 18px;
@@ -72,14 +85,83 @@ ul li {
   margin-bottom: 20px;
 }
 
+/* LONG TEXT FIX */
+li {
+  word-break: break-word;
+}
+
+/* FOOTER */
 footer {
   background: #e6ebf2;
   text-align: center;
   padding: 30px;
   margin-top: 40px;
 }
-</style>
 
+/* -------- RESPONSIVE -------- */
+
+@media (max-width: 768px) {
+
+  header {
+    padding: 60px 20px 40px;
+  }
+
+  header h1 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  header p {
+    font-size: 15px;
+  }
+
+  nav {
+    padding: 10px 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px 12px 5px 0;
+    font-size: 14px;
+  }
+
+  section {
+    padding: 40px 18px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+
+  section {
+    padding: 30px 14px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
@@ -96,7 +178,7 @@ footer {
   <a href="#home">Home</a>
   <a href="#research">Research</a>
   <a href="#people">People</a>
-  <a href="#equipment">Equipment</a>
+  <a href="#facilities">Facilities</a>
   <a href="#publications">Publications & Patents</a>
   <a href="#contact">Contact</a>
 </nav>
@@ -143,7 +225,6 @@ Research interests: Embedded systems and electronic hardware design.
 
 <div class="card">
 <strong>Industry-Affiliated Graduate Students</strong>
-
 <ul class="student-list">
 
 <li>
@@ -161,11 +242,10 @@ Research interests: Electrical and electronic architecture.
 </ul>
 </div>
 
-
 </section>
 
-<section id="equipment">
-<h2>Equipment</h2>
+<section id="facilities">
+<h2>Laboratory Facilities and Equipment</h2>
 <div class="card">
 <ul>
 <li>Power electronics prototyping benches</li>
@@ -194,9 +274,7 @@ Research interests: Electrical and electronic architecture.
 
 <li>Başaran, U., Tao, R., Wu, L., ve Berroth, M., “Low-noise amplifier in 0.12 µm standard CMOS technology for K-band,” Electronics Letters, cilt 41, no. 10, ss. 592–593, 2005.</li>
 
-<li>Başaran, U., Wieser, N., Feiler, G., ve Berroth, M., “Small-signal and high-frequency noise modeling of SiGe HBTs,” IEEE Transactions on Microwave Theory and Techniques, cilt 53, no. 3, ss. 919–928, 2005.</li>
-
-<li>Wu, L., Başaran, U., Tao, R., Berroth, M., ve Boos, Z., “A 2 GHz CMOS dB-linear programmable-gain amplifier with 51 dB dynamic range,” 2005 European Microwave Conference, cilt 3, 2005.</li>
+<li>Başaran, U., Wieser, N., Feiler, G., ve Berroth, M., “Small-signal and high-frequency noise modeling of SiGe HBTs,” IEEE Transactions on Microwaveli>Wu, L., Başaran, U., Tao, R., Berroth, M., ve Boos, Z., “A 2 GHz CMOS dB-linear programmable-gain amplifier with 51 dB dynamic range,” 2005 European Microwave Conference, cilt 3, 2005.</li>
 
 <li>Wu, L., Başaran, U., Dettmann, I., Berroth, M., Bitzer, T., ve Pascht, A., “A broadband high efficiency class-AB LDMOS balanced power amplifier,” 2005 European Microwave Conference, cilt 2, 2005.</li>
 
