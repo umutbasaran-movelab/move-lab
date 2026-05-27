@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@ body {
   color: #1f2a35;
 }
 
-/* HEADER (ENHANCED GRADIENT) */
+/* HEADER */
 header {
   background: linear-gradient(135deg, #2b8bd6 0%, var(--movelab-blue) 40%, #002f4f 100%);
   color: white;
@@ -24,6 +25,7 @@ header {
 
 header h1 {
   font-size: 42px;
+  font-weight: 600;
 }
 
 header p {
@@ -62,17 +64,24 @@ h3 {
   margin-top: 30px;
 }
 
-/* CARD SYSTEM */
+/* CARD */
 .card {
   background: white;
   padding: 28px;
   border-radius: 10px;
   margin-top: 20px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  line-height: 1.5;
 }
 
-/* LIST STYLE */
+/* ✅ SPACING FIX */
+p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
 ul {
+  margin-top: 8px;
   line-height: 1.7;
   padding-left: 18px;
 }
@@ -81,13 +90,12 @@ ul li {
   margin-bottom: 14px;
 }
 
-.student-list li {
-  margin-bottom: 20px;
+#publications li {
+  margin-bottom: 12px;
 }
 
-/* LONG TEXT FIX */
-li {
-  word-break: break-word;
+.student-list li {
+  margin-bottom: 20px;
 }
 
 /* FOOTER */
@@ -99,68 +107,24 @@ footer {
 }
 
 /* -------- RESPONSIVE -------- */
-
 @media (max-width: 768px) {
+  header { padding: 60px 20px 40px; }
+  header h1 { font-size: 26px; }
+  header p { font-size: 15px; }
 
-  header {
-    padding: 60px 20px 40px;
-  }
+  nav { padding: 10px 15px; overflow-x: auto; white-space: nowrap; }
 
-  header h1 {
-    font-size: 26px;
-    line-height: 1.3;
-  }
-
-  header p {
-    font-size: 15px;
-  }
-
-  nav {
-    padding: 10px 15px;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 5px 12px 5px 0;
-    font-size: 14px;
-  }
-
-  section {
-    padding: 40px 18px;
-  }
-
-  .card {
-    padding: 18px;
-  }
-
+  section { padding: 40px 18px; }
+  .card { padding: 18px; }
 }
 
 @media (max-width: 480px) {
-
-  header h1 {
-    font-size: 22px;
-  }
-
-  header p {
-    font-size: 14px;
-  }
-
-  nav a {
-    font-size: 13px;
-  }
-
-  section {
-    padding: 30px 14px;
-  }
-
-  .card {
-    padding: 16px;
-  }
-
+  header h1 { font-size: 22px; }
+  header p { font-size: 14px; }
+  nav a { font-size: 13px; }
+  section { padding: 30px 14px; }
+  .card { padding: 16px; }
 }
-
 </style>
 </head>
 
@@ -185,14 +149,14 @@ footer {
 
 <section id="research">
 <h2>Research Areas</h2>
+
 <div class="card">
-<ul>
 <p>
 MOVE Lab is dedicated to pioneering research in mobility and vehicle electronics. 
 We bridge the gap between rigorous academic investigation and industry application, 
 focusing on power electronics, embedded systems, and intelligent mobility solutions for modern transportation.
 </p>
-  
+
 <ul>
 <li>Power Electronics</li>
 <li>Vehicle Electronics</li>
@@ -200,6 +164,7 @@ focusing on power electronics, embedded systems, and intelligent mobility soluti
 <li>Intelligent Mobility</li>
 </ul>
 </div>
+
 </section>
 
 <section id="people">
@@ -213,20 +178,22 @@ Principal Researcher
 <div class="card">
 <strong>Graduate Students (MSc)</strong>
 <ul class="student-list">
+
 <li>
-Emre İpek — BSc: Özyeğin University. Currently pursuing MSc.<br>
+Emre İpek — BSc: Özyeğin University.<br>
 Research interests: Embedded systems and power electronics.
 </li>
 
 <li>
-Umut İlkbahar — BSc: Özyeğin University. Currently pursuing MSc.<br>
+Umut İlkbahar — BSc: Özyeğin University.<br>
 Research interests: Power electronics and hardware design.
 </li>
 
 <li>
-Efe Can Özhan — BSc: Özyeğin University. Currently pursuing MSc.<br>
+Efe Can Özhan — BSc: Özyeğin University.<br>
 Research interests: Embedded systems and electronic hardware design.
 </li>
+
 </ul>
 </div>
 
@@ -236,20 +203,17 @@ Research interests: Embedded systems and electronic hardware design.
 
 <li>
 Yiğit Kartal — MSc Student.<br>
-Embedded Systems Engineer at AVL.<br>
-Research interests: Embedded systems.
+Embedded Systems Engineer at AVL.
 </li>
 
 <li>
 Buğra Aksu — MSc Student.<br>
-Electrical & Electronics Architecture Engineer at TOGG.<br>
-Research interests: Electrical and electronic architecture.
+Electrical & Electronics Architecture Engineer at TOGG.
 </li>
 
 <li>
 İsra Görkem Bayrak — MSc Student.<br>
-Electrical & Electronics Engineer at Vestel.<br>
-Research interests: Automotive High-Speed Hardware Design.
+Electrical & Electronics Engineer at Vestel.
 </li>
 
 </ul>
@@ -259,6 +223,7 @@ Research interests: Automotive High-Speed Hardware Design.
 
 <section id="facilities">
 <h2>Laboratory Facilities and Equipment</h2>
+
 <div class="card">
 <ul>
 <li>Power electronics prototyping benches</li>
@@ -267,6 +232,7 @@ Research interests: Automotive High-Speed Hardware Design.
 <li>Automotive Ethernet communication and testing equipment</li>
 </ul>
 </div>
+
 </section>
 
 <section id="publications">
@@ -277,37 +243,34 @@ Research interests: Automotive High-Speed Hardware Design.
 <h3>Publications</h3>
 <ul>
 
-<li>Başaran, U., “Real-Time Ground Fault Detection in ECUs with High-Side Switches Driving Inductive Loads,” IEEE Embedded Systems Letters, IEEE, 2025.</li>
+<li>Başaran, U., “Real-Time Ground Fault Detection in ECUs...” IEEE Embedded Systems Letters, 2025.</li>
 
-<li>Moreira, J., Leuschner, S., Stevanovic, N., Pretl, H., Pfann, P., Thüringer, R., Kastner, M., Pröll, C., Schwarz, A., Mrugalla, F., Başaran U., et al., “A single-chip HSPA transceiver with fully integrated 3G CMOS power amplifiers,” 2015 IEEE International Solid-State Circuits Conference (ISSCC), pp. 1–3, 2015.</li>
+<li>Moreira, J., et al., “A single-chip HSPA transceiver...” ISSCC, 2015.</li>
 
-<li>Soner, B., İçke, A., Mert, A. C., Başaran, U., İmpram, S. T., ve Şahin, İ., “Development of an electronic control unit for PMSM drives in automotive applications,” 2015 9th International Conference on Electrical and Electronics Engineering (ELECO), pp. 680–684, IEEE, 2015.</li>
+<li>Soner, B., et al., “Development of an ECU for PMSM drives...” ELECO, 2015.</li>
 
-<li>Simon, M., Laaser, P., Riccio, E., Başaran, U., Friedrich, D., Raman, Y., Geltinger, H., ve Holm, A., “A high performance dual band/dual mode CMOS RF transceiver for WiMAX and WLAN systems,” 2008 European Conference on Wireless Technology, pp. 81–84, 2008.</li>
+<li>Simon, M., et al., “Dual band CMOS RF transceiver...” 2008.</li>
 
-<li>Başaran, U., Tao, R., Wu, L., ve Berroth, M., “Low-noise amplifier in 0.12 µm standard CMOS technology for K-band,” Electronics Letters, cilt 41, no. 10, ss. 592–593, 2005.</li>
+<li>Başaran, U., et al., “Low-noise amplifier...” Electronics Letters, 2005.</li>
 
-<li>Başaran, U., Wieser, N., Feiler, G., ve Berroth, M., “Small-signal and high-frequency noise modeling of SiGe HBTs,” IEEE Transactions on Microwave Theory and Techniques, vol. 53, no. 3, pp. 919–928, March 2005</li>
-  
-<li>Wu, L., Başaran, U., Tao, R., Berroth, M., ve Boos, Z., “A 2 GHz CMOS dB-linear programmable-gain amplifier with 51 dB dynamic range,” 2005 European Microwave Conference, cilt 3, 2005.</li>
+<li>
+Başaran, U., et al.,
+“Small-signal and high-frequency noise modeling of SiGe HBTs,”
+IEEE Transactions on Microwave Theory and Techniques, 2005.
+</li>
 
-<li>Wu, L., Başaran, U., Dettmann, I., Berroth, M., Bitzer, T., ve Pascht, A., “A broadband high efficiency class-AB LDMOS balanced power amplifier,” 2005 European Microwave Conference, cilt 2, 2005.</li>
-
-<li>Wu, L., Tao, R., Başaran, U., Luger, J., Dettmann, I., ve Berroth, M., “The integrated 2W high voltage/high power 0.12 µm RF CMOS power amplifier,” 34th European Microwave Conference, cilt 1, ss. 53–56, 2004.</li>
+<li>Wu, L., et al., “Programmable gain amplifier...” 2005.</li>
+<li>Wu, L., et al., “Balanced power amplifier...” 2005.</li>
+<li>Wu, L., et al., “RF CMOS PA...” 2004.</li>
 
 </ul>
 
 <h3>Patents</h3>
 <ul>
-
-<li>RF-Demodulator, Calibration Circuitry and Methods for Calibrating an RF-Demodulator (2012), DE102012205856B4; US8498598B2</li>
-
-<li>Adaptive Filtering of Blocker Signals in Demodulators (2013), US8610495B2</li>
-
-<li>Dual Mode Receiver with RF Splitter Using Programmable Passive Components (2013), DE102013105222B4; US9219452B2</li>
-
-<li>Second-Order Filter with Notch for use in Receivers to effectively suppress the Transmitter Blockers (2013), DE102013203182B4; US9112476B2; US9413326B2</li>
-
+<li>RF-Demodulator (2012)</li>
+<li>Adaptive Filtering (2013)</li>
+<li>Dual Mode Receiver (2013)</li>
+<li>Second-Order Filter (2013)</li>
 </ul>
 
 </div>
@@ -319,8 +282,7 @@ Research interests: Automotive High-Speed Hardware Design.
 <div class="card">
 <p>
 Özyeğin Üniversitesi<br>
-Nişantepe Mahallesi, Orman Sokak No:13<br>
-Çekmeköy, İstanbul, Türkiye
+Çekmeköy, İstanbul
 </p>
 
 <p>Email: umut.basaran@ozyegin.edu.tr</p>
@@ -329,8 +291,9 @@ Nişantepe Mahallesi, Orman Sokak No:13<br>
 </section>
 
 <footer>
-© 2026 Mobility and Vehicle Electronics (MOVE) Lab – Özyeğin University
+© 2026 MOVE Lab – Özyeğin University
 </footer>
 
 </body>
 </html>
+``
