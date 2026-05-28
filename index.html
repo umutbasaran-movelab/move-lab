@@ -1,430 +1,439 @@
 <!DOCTYPE html>
 
-<html lang="tr"><head>
+<html lang="en"><head>
 <meta charset="utf-8"/>
-<title>MOVE Lab | Özyeğin University</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<style>:root { --movelab-blue: #005E9E; }
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  margin: 0;
-  background: #f4f7fb;
-  color: #1f2a35;
-  overflow-x: hidden;
-}
-/* HEADER */
-header {
-  position: relative;
-  background: linear-gradient(rgba(0, 94, 158, 0.8), rgba(0, 47, 79, 0.9)), url('desen.png');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  padding: 120px 40px 100px;
-  overflow: hidden;
-}
+<title>Mobility and Vehicle Electronics (MOVE) Lab | Özyeğin Üniversitesi</title>
+<style>:root {
+            --movelab-blue: #005E9E;
+            --dark-navy: #0f1c28;
+            --bg-light: #f4f7fb;
+            --text-main: #1f2a35;
+        }
 
-/* SHIMMER EFFECT FOR HEADER */
-header::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -150%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(255, 255, 255, 0.05) 40%,
-    rgba(255, 255, 255, 0.15) 50%,
-    rgba(255, 255, 255, 0.05) 60%,
-    transparent
-  );
-  transform: skewX(-25deg);
-  animation: shimmer 8s infinite linear;
-  pointer-events: none;
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: var(--bg-light);
+            color: var(--text-main);
+            scroll-behavior: smooth;
+        }
 
-@keyframes shimmer {
-  0% { left: -150%; }
-  30% { left: 150%; }
-  100% { left: 150%; }
-}
+        /* HEADER */
+        header {
+            position: relative;
+            background: linear-gradient(rgba(0, 47, 79, 0.75), rgba(0, 47, 79, 0.75)), url('https://lh3.googleusercontent.com/aida/ADBb0ugmu5Q698_vjEdCu2hmmJ3cfb0ikJARaHbN-WvA0UOjlWxrFVHoxcv_dCbISaLycy3XS3oyg79RD5F_85U7EuxOafvo8PSQULhzshg3ttnLnAkIMzgWnY5kYiKrwyRBGkeKjlw-zIN0PsNw_Xz0EMHXBhnYlsHCWubs4QXVFTutHBu654jmQ1xvchz0yrh2eUBPUW1pMUtxlMw2cCC3hFvnFkU1rtGCsWWX6jVTDCH6gQ1xuS2wF2M4CZSl');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 140px 40px 120px;
+            text-align: left;
+        }
 
-/* HERO ANIMATION */
-header .hero-content {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s ease-out forwards;
-}
+        header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+            letter-spacing: -0.5px;
+        }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+        header p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 0 40px 0;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
 
-header h1 {
-  font-size: 42px;
-  font-weight: 600;
-  margin: 0 0 10px 0;
-}
-header p {
-  font-size: 18px;
-  max-width: 720px;
-  margin: 0;
-}
+        /* NAVIGATION */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--dark-navy);
+            padding: 0 40px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
 
-/* NAV */
-nav {
-  position: sticky;
-  top: 0;
-  background: #0f1c28;
-  padding: 14px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-.nav-links a {
-  color: white;
-  margin-right: 20px;
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  transition: color 0.3s ease;
-}
-.nav-links a:hover {
-  color: #a3d8ff;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: var(--movelab-blue);
-  transition: width 0.3s ease;
-}
-.nav-links a:hover::after {
-  width: 100%;
-}
+        .nav-links {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
 
-.lang-switcher {
-  display: flex;
-  gap: 10px;
-}
-.lang-btn {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.3);
-  color: white;
-  cursor: pointer;
-  padding: 4px 12px;
-  border-radius: 4px;
-  font-size: 14px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.lang-btn:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.6);
-}
-.lang-btn.active {
-  background: var(--movelab-blue);
-  border-color: var(--movelab-blue);
-  font-weight: bold;
-  box-shadow: 0 0 10px rgba(0, 94, 158, 0.4);
-}
+        .nav-links a {
+            color: white;
+            margin-right: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 5px;
+        }
 
-/* REVEAL ON SCROLL */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
+        .nav-links a:hover {
+            color: #3498db;
+        }
 
-/* SECTIONS */
-section {
-  padding: 70px 40px;
-  max-width: 1100px;
-  margin: auto;
-}
-section h2 {
-  color: var(--movelab-blue);
-  margin-bottom: 20px;
-}
-h3 {
-  margin-top: 30px;
-}
-/* CARD */
-.card {
-  background: white;
-  padding: 28px;
-  border-radius: 10px;
-  margin-top: 20px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-  line-height: 1.5;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-}
-/* SPACING */
-p {
-  margin-bottom: 16px;
-  line-height: 1.6;
-}
-ul {
-  margin-top: 8px;
-  line-height: 1.7;
-  padding-left: 18px;
-}
-ul li {
-  margin-bottom: 14px;
-}
-#publications li {
-  margin-bottom: 12px;
-}
-.student-list li {
-  margin-bottom: 20px;
-}
-/* FOOTER */
-footer {
-  background: #e6ebf2;
-  text-align: center;
-  padding: 30px;
-  margin-top: 40px;
-}
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+        }
 
-/* LANGUAGE TOGGLE LOGIC */
-[lang-content] { display: none; }
-body.lang-tr [lang-content="tr"] { display: block; }
-body.lang-en [lang-content="en"] { display: block; }
-/* Inline elements support */
-span[lang-content] { display: none; }
-body.lang-tr span[lang-content="tr"] { display: inline; }
-body.lang-en span[lang-content="en"] { display: inline; }
+        .lang-btn {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
 
-/* -------- RESPONSIVE -------- */
-@media (max-width: 768px) {
-  header { padding: 60px 20px 40px; }
-  header h1 { font-size: 26px; }
-  header p { font-size: 15px; }
-  nav { padding: 10px 15px; flex-direction: column; gap: 10px; }
-  .nav-links { overflow-x: auto; white-space: nowrap; width: 100%; text-align: center; }
-  section { padding: 40px 18px; }
-  .card { padding: 18px; }
-}
-@media (max-width: 480px) {
-  header h1 { font-size: 22px; }
-  header p { font-size: 14px; }
-  nav a { font-size: 13px; }
-  section { padding: 30px 14px; }
-  .card { padding: 16px; }
-}</style>
+        .lang-btn.active {
+            background: var(--movelab-blue);
+            border-color: var(--movelab-blue);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 40px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            color: var(--movelab-blue);
+            font-size: 28px;
+            border-bottom: 2px solid #e0e6ed;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--dark-navy);
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        .student-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f4f8;
+        }
+
+        .student-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .student-name {
+            display: block;
+            font-weight: 700;
+            font-size: 17px;
+            color: var(--dark-navy);
+        }
+
+        .student-info {
+            display: block;
+            font-size: 16px; /* Projelerle aynı boyuta getirildi */
+            color: var(--text-main); /* Projelerle aynı renk tonuna getirildi */
+            margin-top: 4px;
+        }
+
+        /* ECU IMAGE STYLING */
+        .ecu-container {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            perspective: 1000px;
+            width: 100%;
+        }
+
+        .ecu-image-wrapper {
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease;
+            transform-style: preserve-3d;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .ecu-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* FOOTER */
+        footer {
+            background: #eef2f7;
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 14px;
+            margin-top: 60px;
+        }
+
+        /* LANGUAGE CONTENT TOGGLE */
+        [data-lang="en"] {
+            display: none;
+        } 
+
+        body.lang-en [data-lang="tr"] {
+            display: none;
+        }
+
+        body.lang-en [data-lang="en"] {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 100px 20px 80px;
+                text-align: center;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+            header p {
+                font-size: 15px;
+                margin: 0 auto 20px;
+            }
+            nav {
+                padding: 10px 20px;
+                height: auto;
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                height: auto;
+            }
+            .nav-links a {
+                margin-right: 0;
+                font-size: 12px;
+                padding: 8px 5px;
+                height: auto;
+            }
+            .lang-switch {
+                padding-bottom: 10px;
+            }
+            section {
+                padding: 40px 20px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            .card {
+                padding: 20px;
+            }
+            .ecu-container {
+                max-width: 100%;
+            }
+        }</style>
 </head>
-<body class="lang-tr">
-<header id="home">
-<div class="hero-content">
-<h1 lang-content="tr">Mobility and Vehicle Electronics (MOVE) Lab</h1>
-<h1 lang-content="en">Mobility and Vehicle Electronics (MOVE) Lab</h1>
-<p lang-content="tr">Özyeğin Üniversitesi bünyesinde güç elektroniği, araç elektroniği, gömülü sistemler ve akıllı mobilite konularına odaklanan araştırma laboratuvarı.</p>
-<p lang-content="en">Research laboratory at Özyeğin University focusing on power electronics, vehicle electronics, embedded systems, and intelligent mobility.</p>
-</div>
+<body class="lang-en" style="-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility;">
+<header id="home" style="padding: 140px 40px 120px;">
+<h1 class="" data-lang="tr">Mobility and Vehicle Electronics (MOVE) Lab</h1>
+<h1 class="" data-lang="en">Mobility and Vehicle Electronics (MOVE) Lab</h1>
+<p class="" data-lang="tr">Özyeğin Üniversitesi bünyesinde güç elektroniği, araç elektroniği, gömülü sistemler ve akıllı mobilite konularına odaklanan araştırma laboratuvarı.</p>
+<p class="" data-lang="en">A research laboratory at Özyeğin University focusing on power electronics, vehicle electronics, embedded systems, and smart mobility.</p>
 </header>
 <nav>
 <div class="nav-links">
-<a href="#home">
-<span lang-content="tr">Ana Sayfa</span>
-<span lang-content="en">Home</span>
-</a>
-<a href="#research">
-<span lang-content="tr">Araştırma</span>
-<span lang-content="en">Research</span>
-</a>
-<a href="#people">
-<span lang-content="tr">Ekibimiz</span>
-<span lang-content="en">People</span>
-</a>
-<a href="#facilities">
-<span lang-content="tr">Laboratuvar Olanakları</span>
-<span lang-content="en">Facilities</span>
-</a>
-<a href="#publications">
-<span lang-content="tr">Yayınlar ve Patentler</span>
-<span lang-content="en">Publications &amp; Patents</span>
-</a>
-<a href="#contact">
-<span lang-content="tr">İletişim</span>
-<span lang-content="en">Contact</span>
-</a>
+<a href="#home"><span class="" data-lang="tr">Ana Sayfa</span><span class="" data-lang="en">Home</span></a>
+<a href="#research"><span class="" data-lang="tr">Araştırma</span><span class="" data-lang="en">Research</span></a><a href="#projects"><span class="" data-lang="tr">Projeler</span><span class="" data-lang="en">Projects</span></a>
+<a href="#people"><span class="" data-lang="tr">Ekibimiz</span><span class="" data-lang="en">People</span></a>
+<a href="#facilities"><span class="" data-lang="tr">Olanaklar</span><span class="" data-lang="en">Facilities</span></a>
+<a href="#publications"><span class="" data-lang="tr">Yayınlar</span><span class="" data-lang="en">Publications</span></a>
+<a href="#contact"><span class="" data-lang="tr">İletişim</span><span class="" data-lang="en">Contact</span></a>
 </div>
-<div class="lang-switcher">
-<button class="lang-btn active" id="btn-tr" onclick="setLang('tr')">TR</button>
-<button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+<div class="lang-switch">
+<button class="lang-btn" onclick="setLanguage('tr')">TR</button>
+<button class="lang-btn active" onclick="setLanguage('en')">EN</button>
 </div>
 </nav>
-<section class="reveal" id="research">
-<h2 lang-content="tr">Araştırma Alanları</h2>
-<h2 lang-content="en">Research Areas</h2>
+<section id="research">
+<h2 class="" data-lang="tr">Araştırma Alanları</h2>
+<h2 class="" data-lang="en">Research Areas</h2>
+<div class="ecu-container" style="max-width: 70%; margin: 0 auto 40px; perspective: 1000px; width: 100%;">
+<div class="ecu-image-wrapper">
+<img alt="Ultra-high resolution 8k rendering of an automotive ECU exploded view with sharp technical text and signal waveforms." src="ECU_3D.png" style="width: 100%; height: auto; display: block;"/>
+</div>
+</div>
 <div class="card">
-<div lang-content="tr">
-<p>MOVE Lab, mobilite ve araç elektroniği alanlarında öncü araştırmalara adanmıştır. Akademik çalışmalar ile endüstriyel uygulamalar arasındaki boşluğu doldurarak modern taşımacılık için güç elektroniği, gömülü sistemler ve akıllı mobilite çözümlerine odaklanıyoruz.</p>
+<p class="" data-lang="tr">MOVE Lab, mobilite ve araç elektroniği alanlarında öncü araştırmalara adanmıştır. Akademik çalışmalar ile endüstriyel uygulamalar arasındaki boşluğu doldurarak modern taşımacılık için güç elektroniği, gömülü sistemler ve akıllı mobilite çözümlerine odaklanıyoruz.</p>
+<p class="" data-lang="en">MOVE Lab is dedicated to pioneering research in mobility and vehicle electronics. By bridging the gap between academic research and industrial applications, we focus on power electronics, embedded systems, and smart mobility solutions for modern transportation.</p>
 <ul>
-<li>Güç Elektroniği</li>
-<li>Araç Elektroniği</li>
-<li>Gömülü sistemler</li>
-<li>Akıllı Mobilite</li>
+<li class=""><span class="" data-lang="tr">Güç Elektroniği</span><span class="" data-lang="en">Power Electronics</span></li>
+<li class=""><span class="" data-lang="tr">Araç Elektroniği</span><span class="" data-lang="en">Vehicle Electronics</span></li>
+<li class=""><span class="" data-lang="tr">Gömülü Sistemler</span><span class="" data-lang="en">Embedded Systems</span></li>
+<li class=""><span class="" data-lang="tr">Akıllı Mobilite</span><span class="" data-lang="en">Smart Mobility</span></li>
 </ul>
 </div>
-<div lang-content="en">
-<p>MOVE Lab is dedicated to pioneering research in mobility and vehicle electronics. We bridge the gap between rigorous academic investigation and industry application, focusing on power electronics, embedded systems, and intelligent mobility solutions for modern transportation.</p>
-<ul>
-<li>Power Electronics</li>
-<li>Vehicle Electronics</li>
-<li>Embedded Systems</li>
-<li>Intelligent Mobility</li>
-</ul>
+</section><section class="reveal" id="projects"><h2 class="" data-lang="tr">Projeler</h2><h2 class="" data-lang="en">Projects</h2><div class="card"><ul><li class=""><span class="" data-lang="tr">48 V Bölge ECU Geliştirilmesi</span><span class="" data-lang="en">Development of a 48 V Zone ECU</span></li><li class=""><span class="" data-lang="tr">Yüksek Gerilim İnvertör Tasarımı</span><span class="" data-lang="en">High-Voltage Inverter Design</span></li><li class=""><span class="" data-lang="tr">Radar ECU Geliştirilmesi</span><span class="" data-lang="en">Development of a Radar ECU</span></li></ul></div></section>
+<section id="people">
+<h2 class="" data-lang="tr">Ekibimiz</h2>
+<h2 class="" data-lang="en">Our Team</h2>
+<div class="card">
+<h3 class="" data-lang="tr">Araştırma Grubu Lideri</h3>
+<h3 class="" data-lang="en">Principal Researcher</h3>
+<strong>Dr. Umut Başaran</strong>
+</div>
+<div class="card">
+<h3 class="" data-lang="tr">Lisansüstü Öğrenciler (Yüksek Lisans)</h3>
+<h3 class="" data-lang="en">Graduate Students (MSc)</h3>
+<div class="student-item">
+<span class="student-name">Emre İpek</span>
+<span class="student-info">BSc: Özyeğin University</span>
+<span class="student-info" data-lang="tr">Araştırma ilgi alanları: Gömülü sistemler ve güç elektroniği.</span>
+<span class="student-info" data-lang="en">Research interests: Embedded systems and power electronics.</span>
+</div>
+<div class="student-item">
+<span class="student-name">Umut İlkbahar</span>
+<span class="student-info">BSc: Özyeğin University</span>
+<span class="student-info" data-lang="tr">Araştırma ilgi alanları: Güç elektroniği ve donanım tasarımı.</span>
+<span class="student-info" data-lang="en">Research interests: Power electronics and hardware design.</span>
+</div>
+<div class="student-item">
+<span class="student-name">Efe Can Özhan</span>
+<span class="student-info">BSc: Özyeğin University</span>
+<span class="student-info" data-lang="tr">Araştırma ilgi alanları: Gömülü sistemler ve elektronik donanım tasarımı.</span>
+<span class="student-info" data-lang="en">Research interests: Embedded systems and electronic hardware design.</span>
+</div>
+<div class="student-item">
+<span class="student-name">Deniz Kutay Kayan</span>
+<span class="student-info">BSc: Özyeğin University</span>
+<span class="student-info" data-lang="tr">Araştırma ilgi alanları: Gömülü sistemler ve elektronik donanım tasarımı.</span>
+<span class="student-info" data-lang="en">Research interests: Embedded systems and electronic hardware design.</span>
+</div>
+</div>
+<div class="card">
+<h3 class="" data-lang="tr">Sanayi ile Bağlantılı Lisansüstü Öğrenciler</h3>
+<h3 class="" data-lang="en">Industry-Affiliated Graduate Students</h3>
+<div class="student-item">
+<span class="student-name">Yiğit Kartal</span>
+<span class="student-info">BSc: Özyeğin University</span>
+<span class="student-info" data-lang="tr">Gömülü Sistemler Mühendisi - AVL</span>
+<span class="student-info" data-lang="en">Embedded Systems Engineer at AVL.</span>
+</div>
+<div class="student-item">
+<span class="student-name">Buğra Aksu</span>
+<span class="student-info">BSc: Özyeğin University</span>
+<span class="student-info" data-lang="tr">Elektrik ve Elektronik Mimarisi Mühendisi - TOGG</span>
+<span class="student-info" data-lang="en">Electrical & Electronics Architecture Engineer at TOGG.</span>
+</div>
+<div class="student-item">
+<span class="student-name">İsra Görkem Bayrak</span>
+<span class="student-info">BSc: Ege University</span>
+<span class="student-info" data-lang="tr">Elektrik ve Elektronik Mühendisi - Vestel</span>
+<span class="student-info" data-lang="en">Electrical & Electronics Engineer at Vestel.</span>
 </div>
 </div>
 </section>
-<section class="reveal" id="people">
-<h2 lang-content="tr">Ekibimiz</h2>
-<h2 lang-content="en">People</h2>
+<section id="facilities">
+<h2 class="" data-lang="tr">Laboratuvar Olanakları ve Ekipmanlar</h2>
+<h2 class="" data-lang="en">Laboratory Facilities and Equipment</h2>
 <div class="card">
-<strong>Dr. Umut Başaran</strong><br/>
-<span lang-content="tr">Yürütücü</span>
-<span lang-content="en">Principal Researcher</span>
-</div>
-<div class="card">
-<strong lang-content="tr">Lisansüstü Öğrenciler (Yüksek Lisans)</strong>
-<strong lang-content="en">Graduate Students (MSc)</strong>
-<ul class="student-list" lang-content="tr">
-<li>Emre İpek<br/>BSc: Özyeğin University<br/>Araştırma ilgi alanları: Gömülü sistemler ve güç elektroniği.</li>
-<li>Umut İlkbahar<br/>BSc: Özyeğin University<br/>Araştırma ilgi alanları: Güç elektroniği ve donanım tasarımı.</li>
-<li>Efe Can Özhan<br/>BSc: Özyeğin University<br/>Araştırma ilgi alanları: Gömülü sistemler ve elektronik donanım tasarımı.</li>
-<li>Deniz Kutay Kayan<br/>BSc: Özyeğin University<br/>Araştırma ilgi alanları: Gömülü sistemler ve elektronik donanım tasarımı.</li>
-</ul>
-<ul class="student-list" lang-content="en">
-<li>Emre İpek<br/>BSc: Özyeğin University<br/>Research interests: Embedded systems and power electronics.</li>
-<li>Umut İlkbahar<br/>BSc: Özyeğin University<br/>Research interests: Power electronics and hardware design.</li>
-<li>Efe Can Özhan<br/>BSc: Özyeğin University<br/>Research interests: Embedded systems and electronic hardware design.</li>
-<li>Deniz Kutay Kayan<br/>BSc: Özyeğin University<br/>Research interests: Embedded systems and electronic hardware design.</li>
-</ul>
-</div>
-<div class="card">
-<strong lang-content="tr">Sanayi ile Bağlantılı Lisansüstü Öğrenciler</strong> 
-<strong lang-content="en">Industry-Affiliated Graduate Students</strong>
-<ul class="student-list">
-<li>Yiğit Kartal<br/>BSc: Özyeğin University<br/>
-<span lang-content="tr">AVL'de Gömülü Sistemler Mühendisi.</span>
-<span lang-content="en">Embedded Systems Engineer at AVL.</span>
-</li>
-<li>Buğra Aksu<br/>BSc: Özyeğin University<br/>
-<span lang-content="tr">TOGG'da Elektrik ve Elektronik Mimari Mühendisi.</span>
-<span lang-content="en">Electrical &amp; Electronics Architecture Engineer at TOGG.</span>
-</li>
-<li>İsra Görkem Bayrak<br/>BSc: Ege University<br/>
-<span lang-content="tr">Vestel'de Elektrik ve Elektronik Mühendisi.</span>
-<span lang-content="en">Electrical &amp; Electronics Engineer at Vestel.</span>
-</li>
-</ul>
-</div>
-</section>
-<section class="reveal" id="facilities">
-<h2 lang-content="tr">Laboratuvar Olanakları ve Ekipmanlar</h2>
-<h2 lang-content="en">Laboratory Facilities and Equipment</h2>
-<div class="card">
-<ul lang-content="tr">
-<li>Güç elektroniği prototipleme masaları</li>
-<li>Gömülü kontrol platformları</li>
-<li>CAN veri yolu haberleşme arayüzleri ve analizörleri</li>
-<li>Otomotiv Ethernet haberleşme ve test ekipmanları</li>
-</ul>
-<ul lang-content="en">
-<li>Power electronics prototyping benches</li>
-<li>Embedded control platforms</li>
-<li>CAN bus communication interfaces and analyzers</li>
-<li>Automotive Ethernet communication and testing equipment</li>
-</ul>
-</div>
-</section>
-<section class="reveal" id="publications">
-<h2 lang-content="tr">Yayınlar ve Patentler</h2>
-<h2 lang-content="en">Publications &amp; Patents</h2>
-<div class="card">
-<h3 lang-content="tr">Yayınlar</h3>
-<h3 lang-content="en">Publications</h3>
 <ul>
-<li>Başaran, U., “Real-Time Ground Fault Detection in ECUs with High-Side Switches Driving Inductive Loads,” IEEE Embedded Systems Letters, IEEE, 2025.</li>
-<li>Moreira, J., Leuschner, S., Stevanovic, N., Pretl, H., Pfann, P., Thüringer, R., Kastner, M., Pröll, C., Schwarz, A., Mrugalla, F., Başaran U., et al., “A single-chip HSPA transceiver with fully integrated 3G CMOS power amplifiers,” 2015 IEEE International Solid-State Circuits Conference (ISSCC), pp. 1–3, 2015.</li>
-<li>Soner, B., İçke, A., Mert, A. C., Başaran, U., İmpram, S. T., ve Şahin, İ., “Development of an electronic control unit for PMSM drives in automotive applications,” 2015 9th International Conference on Electrical and Electronics Engineering (ELECO), pp. 680–684, IEEE, 2015.</li>
-<li>Simon, M., Laaser, P., Riccio, E., Başaran, U., Friedrich, D., Raman, Y., Geltinger, H., ve Holm, A., “A high performance dual band/dual mode CMOS RF transceiver for WiMAX and WLAN systems,” 2008 European Conference on Wireless Technology, pp. 81–84, 2008.</li>
-<li>Başaran, U., Tao, R., Wu, L., ve Berroth, M., “Low-noise amplifier in 0.12 µm standard CMOS technology for K-band,” Electronics Letters, cilt 41, no. 10, ss. 592–593, 2005.</li>
-<li>Başaran, U., Wieser, N., Feiler, G., ve Berroth, M., “Small-signal and high-frequency noise modeling of SiGe HBTs,” IEEE Transactions on Microwave Theory and Techniques, cilt 53, no. 3, ss. 919–928, 2005.</li>
-<li>Wu, L., Başaran, U., Tao, R., Berroth, M., ve Boos, Z., “A 2 GHz CMOS dB-linear programmable-gain amplifier with 51 dB dynamic range,” 2005 European Microwave Conference, cilt 3, 2005.</li>
-<li>Wu, L., Başaran, U., Dettmann, I., Berroth, M., Bitzer, T., ve Pascht, A., “A broadband high efficiency class-AB LDMOS balanced power amplifier,” 2005 European Microwave Conference, cilt 2, 2005.</li>
-<li>Wu, L., Tao, R., Başaran, U., Luger, J., Dettmann, I., ve Berroth, M., “The integrated 2W high voltage/high power 0.12 µm RF CMOS power amplifier,” 34th European Microwave Conference, cilt 1, ss. 53–56, 2004.</li>
-</ul>
-<h3 lang-content="tr">Patentler</h3>
-<h3 lang-content="en">Patents</h3>
-<ul>
-<li>RF-Demodulator, Calibration Circuitry and Methods for Calibrating an RF-Demodulator (2012), DE102012205856B4; US8498598B2</li>
-<li>Adaptive Filtering of Blocker Signals in Demodulators (2013), US8610495B2</li>
-<li>Dual Mode Receiver with RF Splitter Using Programmable Passive Components (2013), DE102013105222B4; US9219452B2</li>
-<li>Second-Order Filter with Notch for use in Receivers to effectively suppress the Transmitter Blockers (2013), DE102013203182B4; US9112476B2; US9413326B2</li>
+<li class=""><span class="" data-lang="tr">Güç elektroniği prototipleme masaları</span><span class="" data-lang="en">Power electronics prototyping stations</span></li>
+<li class=""><span class="" data-lang="tr">Gömülü kontrol platformları</span><span class="" data-lang="en">Embedded control platforms</span></li>
+<li class=""><span class="" data-lang="tr">CAN veri yolu haberleşme arayüzleri ve analizörleri</span><span class="" data-lang="en">CAN bus communication interfaces and analyzers</span></li>
+<li class=""><span class="" data-lang="tr">Otomotiv Ethernet haberleşme ve test ekipmanları</span><span class="" data-lang="en">Automotive Ethernet communication and test equipment</span></li>
 </ul>
 </div>
 </section>
-<section class="reveal" id="contact">
-<h2 lang-content="tr">İletişim</h2>
-<h2 lang-content="en">Contact</h2>
+<section id="publications">
+<h2 class="" data-lang="tr">Yayınlar ve Patentler</h2>
+<h2 class="" data-lang="en">Publications and Patents</h2>
 <div class="card">
-<p>
-      Özyeğin Üniversitesi<br/>
-      Çekmeköy, İstanbul
-    </p>
-<p>Email: umut.basaran@ozyegin.edu.tr</p>
+<h3 class="" data-lang="tr">Yayınlar</h3><h3 class="" data-lang="en">Publications</h3>
+<ul>
+<li class="">Başaran, U., “Real-Time Ground Fault Detection in ECUs with High-Side Switches Driving Inductive Loads,” IEEE Embedded Systems Letters, IEEE, 2025.</li>
+<li class="">Moreira, J., et al., “A single-chip HSPA transceiver with fully integrated 3G CMOS power amplifiers,” ISSCC, 2015.</li>
+<li class="">Soner, B., et al., “Development of an electronic control unit for PMSM drives in automotive applications,” ELECO, 2015.</li>
+<li class="">Simon, M., et al., “A high performance dual band/dual mode CMOS RF transceiver for WiMAX and WLAN systems,” European Conference on Wireless Technology, 2008.</li>
+<li class="">Başaran, U., et al., “Low-noise amplifier in 0.12 µm standard CMOS technology for K-band,” Electronics Letters, 2005.</li>
+<li class="">Başaran, U., et al., "Small-signal and high-frequency noise modeling of SiGe HBTs," IEEE Transactions on Microwave Theory and Techniques, 2005.</li>
+<li class="">Wu, L., et al., “A 2 GHz CMOS dB-linear programmable-gain amplifier with 51 dB dynamic range,” European Microwave Conference, 2005.</li>
+<li class="">Wu, L., et al., “A broadband high efficiency class-AB LDMOS balanced power amplifier,” European Microwave Conference, 2005.</li>
+<li class="">Wu, L., et al., “The integrated 2W high voltage/high power 0.12 µm RF CMOS power amplifier,” European Microwave Conference, 2004.</li>
+</ul>
+<h3 class="" data-lang="tr">Patentler</h3><h3 class="" data-lang="en">Patents</h3>
+<ul>
+<li class="">RF-Demodulator, Calibration Circuitry and Methods for Calibrating an RF-Demodulator (2012), DE102012205856B4; US8498598B2</li>
+<li class="">Adaptive Filtering of Blocker Signals in Demodulators (2013), US8610495B2</li>
+<li class="">Dual Mode Receiver with RF Splitter Using Programmable Passive Components (2013), DE102013105222B4; US9219452B2</li>
+<li class="">Second-Order Filter with Notch for use in Receivers (2013), DE102013203182B4; US9112476B2; US9413326B2</li>
+</ul>
+</div>
+</section>
+<section id="contact">
+<h2 class="" data-lang="tr">İletişim</h2>
+<h2 class="" data-lang="en">Contact</h2>
+<div class="card">
+<p class="">
+            Özyeğin Üniversitesi<br/>
+            Çekmeköy, İstanbul
+        </p>
+<p class="">Email: umut.basaran@ozyegin.edu.tr</p>
 </div>
 </section>
 <footer>
-<span lang-content="tr">© 2026 MOVE Lab – Özyeğin Üniversitesi</span>
-<span lang-content="en">© 2026 MOVE Lab – Özyeğin University</span>
+    © 2026 MOVE Lab – Özyeğin Üniversitesi / University
 </footer>
 <script>
-function setLang(lang) {
-  document.body.className = 'lang-' + lang;
-  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-  document.getElementById('btn-' + lang).classList.add('active');
-  document.documentElement.lang = lang;
-}
-
-// Reveal on scroll logic using IntersectionObserver
-document.addEventListener('DOMContentLoaded', () => {
-  const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-        // Unobserve once revealed if you only want it to happen once
-        // observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll('.reveal').forEach(el => {
-    observer.observe(el);
-  });
-});
+    function setLanguage(lang) {
+        if (lang === 'en') {
+            document.body.classList.add('lang-en');
+            document.querySelectorAll('.lang-btn')[0].classList.remove('active');
+            document.querySelectorAll('.lang-btn')[1].classList.add('active');
+            document.documentElement.lang = 'en';
+        } else {
+            document.body.classList.remove('lang-en');
+            document.querySelectorAll('.lang-btn')[0].classList.add('active');
+            document.querySelectorAll('.lang-btn')[1].classList.remove('active');
+            document.documentElement.lang = 'tr';
+        }
+    }
 </script>
 </body></html>
