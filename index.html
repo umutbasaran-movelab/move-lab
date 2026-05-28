@@ -28,6 +28,31 @@
             color: white;
             padding: 140px 40px 120px;
             text-align: left;
+            overflow: hidden; /* Parlamanın dışarı taşmasını engeller */
+        }
+
+        /* Kayan Parlama Efekti Katmanı */
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                to right, 
+                rgba(255, 255, 255, 0) 0%, 
+                rgba(255, 255, 255, 0.13) 50%, 
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg); /* Parlamayı hafif eğik yapar */
+            animation: shine 6s infinite ease-in-out;
+        }
+
+        @keyframes shine {
+            0% { left: -150%; }
+            30% { left: 150%; } /* Parlama ilk 2 saniyede geçer */
+            100% { left: 150%; } /* Kalan sürede bekler, gözü yormaz */
         }
 
         header h1 {
@@ -35,6 +60,8 @@
             font-weight: 700;
             margin: 0 0 20px 0;
             letter-spacing: -0.5px;
+            position: relative;
+            z-index: 2; /* Metinlerin parlamanın altında ezilmesini önler */
         }
 
         header p {
@@ -43,6 +70,8 @@
             margin: 0 0 40px 0;
             line-height: 1.6;
             opacity: 0.9;
+            position: relative;
+            z-index: 2;
         }
 
         /* NAVIGATION */
@@ -295,7 +324,7 @@
 <section id="research">
 <h2 class="" data-lang="tr">Araştırma Alanları</h2>
 <h2 class="" data-lang="en">Research Areas</h2>
-<div class="ecu-container" style="max-width: 70%; margin: 0 auto 40px; perspective: 1000px; width: 100%;">
+<div class="ecu-container" style="max-width: 84%; margin: 0 auto 40px; perspective: 1000px; width: 100%;">
 <div class="ecu-image-wrapper">
 <img alt="Ultra-high resolution 8k rendering of an automotive ECU exploded view with sharp technical text and signal waveforms." src="ECU_3D.png" style="width: 100%; height: auto; display: block;"/>
 </div>
